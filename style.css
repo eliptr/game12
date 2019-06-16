@@ -1,0 +1,107 @@
+@charset "UTF-8";
+
+html, body {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border: 0px;
+}
+
+canvas {
+  background-color: #B9DF9A;
+  overflow: hidden;
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  padding-bottom: 0px;
+  overflow: 0px;
+}
+
+.field {
+  position: fixed;
+  width: 168px;
+  height: 120px;
+  top: 411px;
+  left: 8px;
+/*  outline: none;
+  box-shadow: none; */
+  border: 0px;
+  padding: 0px;
+  margin: 0px;
+  background-color: rgba(255, 0, 0, 0);
+}
+
+.field2 {
+  position: fixed;
+  width: 168px;
+  height: 120px;
+  top: 535px;
+  left: 8px;
+/*  outline: none;
+  box-shadow: none; */
+  border: 0px;
+  padding: 0px;
+  margin: 0px;
+  background-color: rgba(255, 0, 0, 0);
+}
+
+.field3 {
+  position: fixed;
+  width: 168px;
+  height: 120px;
+  top: 661px;
+  left: 8px;
+/*  outline: none;
+  box-shadow: none; */
+  border: 0px;
+  padding: 0px;
+  margin: 0px;
+  background-color: rgba(255, 0, 0, 0);
+}
+
+.field4 {
+  position: fixed;
+  width: 168px;
+  height: 120px;
+  top: 411px;
+  left: 206px;
+/*  outline: none;
+  box-shadow: none; */
+  border: 0px;
+  padding: 0px;
+  margin: 0px;
+  background-color: rgba(255, 0, 0, 0);
+}
+
+.field5 {
+  position: fixed;
+  width: 168px;
+  height: 120px;
+  top: 535px;
+  left: 206px;
+/*  outline: none;
+  box-shadow: none; */
+  border: 0px;
+  padding: 0px;
+  margin: 0px;
+  background-color: rgba(255, 0, 0, 0);
+}
+
+.field6 {
+  position: fixed;
+  width: 168px;
+  height: 120px;
+  top: 661px;
+  left: 206px;
+/*  outline: none;
+  box-shadow: none; */
+  border: 0px;
+  padding: 0px;
+  margin: 0px;
+  background-color: rgba(255, 0, 0, 0);
+}
