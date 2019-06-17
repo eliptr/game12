@@ -187,6 +187,10 @@ function test() {
   if (localStorage.time6ls) {
     time6 = localStorage.time6ls - finaldif;
   }
+  if (localStorage.wheatls) {
+    wheat = localStorage.wheatls;
+  }
+
 
   draw()
   checks()
