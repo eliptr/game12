@@ -225,19 +225,19 @@ function draw() {
 
   ctx.font = "100 40px Roboto";
   ctx.fillText(time, 50 , 50);
-  ctx.font = "100 40px Roboto";
   ctx.fillText(time2, 90 , 50);
-  ctx.font = "100 40px Roboto";
   ctx.fillText(time3, 130 , 50);
-  ctx.font = "100 40px Roboto";
   ctx.fillText(time4, 180 , 50);
-  ctx.font = "100 40px Roboto";
   ctx.fillText(time5, 230 , 50);
-  ctx.font = "100 40px Roboto";
   ctx.fillText(time6, 280 , 50);
 
   ctx.font = "100 72px Roboto";
   ctx.fillText(minutes + ":" + seconds, 385, 1420);
+  ctx.fillText(minutes2 + ":" + seconds2, 385, 1760);
+  ctx.fillText(minutes3 + ":" + seconds3, 385, 2110);
+  ctx.fillText(minutes4 + ":" + seconds4, 905, 1430);
+  ctx.fillText(minutes5 + ":" + seconds5, 905, 1780);
+  ctx.fillText(minutes6 + ":" + seconds6, 905, 2120);
 
   ctx.font = "100 90px Roboto";
   ctx.fillText(wheat, 560, 990);
