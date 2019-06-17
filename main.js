@@ -93,7 +93,7 @@ var minus4 = 1;
 var minus5 = 1;
 var minus6 = 1;
 
-var wheattm = 15;
+var wheattm = 1200;
 
 var wheat = 0;
 var seeds = 6;
