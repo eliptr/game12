@@ -31,6 +31,7 @@ function onPause() {
   localStorage.time6ls = time6;
 
   localStorage.wheatls = wheat;
+  localStorage.seedsls = seeds;
 }
 
 function onResume() {
@@ -92,9 +93,10 @@ var minus4 = 1;
 var minus5 = 1;
 var minus6 = 1;
 
-var wheattm = 1200;
+var wheattm = 15;
 
 var wheat = 0;
+var seeds = 6;
 
 // load images
 field = new Image();
@@ -190,6 +192,9 @@ function test() {
   if (localStorage.wheatls) {
     wheat = Number(localStorage.wheatls);
   }
+  if (localStorage.seedsls) {
+    seeds = Number(localStorage.seedsls);
+  }
 
 
   draw()
@@ -225,9 +230,9 @@ function draw() {
 
   ctx.font = "100 40px Roboto";
   ctx.fillText(time, 50 , 50);
-  ctx.fillText(time2, 90 , 50);
-  ctx.fillText(time3, 130 , 50);
-  ctx.fillText(time4, 180 , 50);
+  ctx.fillText(seeds, 90 , 50);
+  ctx.fillText(one, 130 , 50);
+  ctx.fillText(two, 180 , 50);
   ctx.fillText(time5, 230 , 50);
   ctx.fillText(time6, 280 , 50);
 
@@ -238,6 +243,9 @@ function draw() {
   ctx.fillText(minutes4 + ":" + seconds4, 905, 1430);
   ctx.fillText(minutes5 + ":" + seconds5, 905, 1780);
   ctx.fillText(minutes6 + ":" + seconds6, 905, 2120);
+
+  ctx.font = "100 82px Roboto";
+  ctx.fillText(seeds, 825, 990);
 
   ctx.font = "100 90px Roboto";
   ctx.fillText(wheat, 560, 990);
@@ -398,6 +406,10 @@ function checks() {
   }
   if (six === 2 && time6 === 0) {
     six = 3;
+  }
+
+  if (seeds < 0) {
+    seeds = 0;
   }
 
   requestAnimationFrame(checks, 10);

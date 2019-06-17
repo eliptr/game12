@@ -105,3 +105,17 @@ body {
   margin: 0px;
   background-color: rgba(255, 0, 0, 0);
 }
+
+.buy {
+  position: fixed;
+  width: 53px;
+  height: 34px;
+  top: 335px;
+  left: 327px;
+/*  outline: none;
+  box-shadow: none; */
+  border: 0px;
+  padding: 0px;
+  margin: 0px;
+  background-color: rgba(255, 0, 0, 0);
+}
