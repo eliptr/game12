@@ -22,6 +22,15 @@ function onPause() {
   localStorage.fourls = four;
   localStorage.fivels = five;
   localStorage.sixls = six;
+
+  localStorage.timels = time;
+  localStorage.time2ls = time2;
+  localStorage.time3ls = time3;
+  localStorage.time4ls = time4;
+  localStorage.time5ls = time5;
+  localStorage.time6ls = time6;
+
+  localStorage.wheatls = wheat;
 }
 
 function onResume() {
@@ -44,18 +53,48 @@ var d2 = Date.parse(localStorage.getItem('unlogls'));
 var diff;  // difference in milliseconds
 var finaldif = "Hello, World!";
 
-var one = true;
-var two = true;
-var three = true;
-var four = true;
-var five = true;
-var six = true;
+var one = 1;
+var two = 1;
+var three = 1;
+var four = 1;
+var five = 1;
+var six = 1;
 
 var time = 0;
+var time2 = 0;
+var time3 = 0;
+var time4 = 0;
+var time5 = 0;
+var time6 = 0;
 
 var minutes = Math.floor(time / 60);
 var seconds = time - minutes * 60;
 
+var minutes2 = Math.floor(time2 / 60);
+var seconds2 = time2 - minutes2 * 60;
+
+var minutes3 = Math.floor(time3 / 60);
+var seconds3 = time3 - minutes3 * 60;
+
+var minutes4 = Math.floor(time4 / 60);
+var seconds4 = time4 - minutes4 * 60;
+
+var minutes5 = Math.floor(time5 / 60);
+var seconds5 = time5 - minutes5 * 60;
+
+var minutes6 = Math.floor(time6 / 60);
+var seconds6 = time6 - minutes6 * 60;
+
+var minus = 1;
+var minus2 = 1;
+var minus3 = 1;
+var minus4 = 1;
+var minus5 = 1;
+var minus6 = 1;
+
+var wheattm = 15;
+
+var wheat = 0;
 
 // load images
 field = new Image();
@@ -116,42 +155,50 @@ function test() {
   orX = 34.3;
   orY = 67.1;
 
-  one = JSON.parse(localStorage.onels);
-  two = JSON.parse(localStorage.twols);
-  three = JSON.parse(localStorage.threels);
-  four = JSON.parse(localStorage.fourls);
-  five = JSON.parse(localStorage.fivels);
-  six = JSON.parse(localStorage.sixls);
+  if (localStorage.onels) {
+    one = JSON.parse(localStorage.onels);
+    two = JSON.parse(localStorage.twols);
+    three = JSON.parse(localStorage.threels);
+    four = JSON.parse(localStorage.fourls);
+    five = JSON.parse(localStorage.fivels);
+    six = JSON.parse(localStorage.sixls);
+  }
 
-  if (!one) {
-    one = false;
-    field.src = "images/mid.png";
+  if (localStorage.timels) {
+    time = localStorage.timels - finaldif;
   }
-  if (!two) {
-    two = false;
-    field2.src = "images/mid.png";
+
+  if (localStorage.time2ls) {
+    time2 = localStorage.time2ls - finaldif;
   }
-  if (!three) {
-    three = false;
-    field3.src = "images/mid.png";
+
+  if (localStorage.time3ls) {
+    time3 = localStorage.time3ls - finaldif;
   }
-  if (!four) {
-    four = false;
-    field4.src = "images/mid.png";
+
+  if (localStorage.time4ls) {
+    time4 = localStorage.time4ls - finaldif;
   }
-  if (!five) {
-    five = false;
-    field5.src = "images/mid.png";
+
+  if (localStorage.time5ls) {
+    time5 = localStorage.time5ls - finaldif;
   }
-  if (!six) {
-    field6.src = "images/mid.png";
+
+  if (localStorage.time6ls) {
+    time6 = localStorage.time6ls - finaldif;
   }
 
   draw()
+  checks()
 }
 
 // runs after test is finished and has an requestAnimationFrame
 function draw() {
+  windowWidth = window.innerWidth;
+  windowHeight = window.innerHeight;
+  windowWidth = window.innerWidth;
+  windowHeight = window.innerHeight;
+  pixelRatio = window.devicePixelRatio || 1; /// get pixel ratio of device
 
   canvasMain.width = windowWidth * pixelRatio;   /// resolution of canvas
   canvasMain.height = windowHeight * pixelRatio;
@@ -173,7 +220,23 @@ function draw() {
   ctx.drawImage(orders, orX, orY);
 
   ctx.font = "100 40px Roboto";
-  ctx.fillText(time, 10 , 50);
+  ctx.fillText(time, 50 , 50);
+  ctx.font = "100 40px Roboto";
+  ctx.fillText(time2, 90 , 50);
+  ctx.font = "100 40px Roboto";
+  ctx.fillText(time3, 130 , 50);
+  ctx.font = "100 40px Roboto";
+  ctx.fillText(time4, 180 , 50);
+  ctx.font = "100 40px Roboto";
+  ctx.fillText(time5, 230 , 50);
+  ctx.font = "100 40px Roboto";
+  ctx.fillText(time6, 280 , 50);
+
+  ctx.font = "100 72px Roboto";
+  ctx.fillText(minutes + ":" + seconds, 385, 1420);
+
+  ctx.font = "100 90px Roboto";
+  ctx.fillText(wheat, 560, 990);
 
   //requestAnimationFrame
   requestAnimationFrame(draw, 10);
@@ -183,17 +246,155 @@ setInterval(function () {
   minutes = Math.floor(time / 60);
   seconds = time - minutes * 60;
 
+  minutes2 = Math.floor(time2 / 60);
+  seconds2 = time2 - minutes2 * 60;
+
+  minutes3 = Math.floor(time3 / 60);
+  seconds3 = time3 - minutes3 * 60;
+
+  minutes4 = Math.floor(time4 / 60);
+  seconds4 = time4 - minutes4 * 60;
+
+  minutes5 = Math.floor(time5 / 60);
+  seconds5 = time5 - minutes5 * 60;
+
+  minutes6 = Math.floor(time6 / 60);
+  seconds6 = time6 - minutes6 * 60;
+
   if (time > 0) {
-    time = time - 1;
+    minus = 1;
+    time -= minus;
   }
+  if (time < 0) {
+    minus = 0;
+    time = 0;
+  }
+
+  if (time2 > 0) {
+    minus2 = 1;
+    time2 -= minus2;
+  }
+  if (time2 < 0) {
+    minus2 = 0;
+    time2 = 0;
+  }
+
+  if (time3 > 0) {
+    minus3 = 1;
+    time3 -= minus3;
+  }
+  if (time3 < 0) {
+    minus3 = 0;
+    time3 = 0;
+  }
+
+  if (time4 > 0) {
+    minus4 = 1;
+    time4 -= minus4;
+  }
+  if (time4 < 0) {
+    minus4 = 0;
+    time4 = 0;
+  }
+
+  if (time5 > 0) {
+    minus5 = 1;
+    time5 -= minus5;
+  }
+  if (time5 < 0) {
+    minus5 = 0;
+    time5 = 0;
+  }
+
+  if (time6 > 0) {
+    minus6 = 1;
+    time6 -= minus6;
+  }
+  if (time6 < 0) {
+    minus6 = 0;
+    time6 = 0;
+  }
+
 }, 1000);
-/*function counter() {
-    var i = 0;
-    var num = 0;
-    // This block will be executed 100 times.
-    setInterval(function(){
-        if (i == 100) clearInterval(this);
-        else num = num + 1; text = num;
-    }, 1000);
-} // End
-counter()*/
+
+function checks() {
+  if (one === 1) {
+    field.src = "images/field.png";
+  }
+  if (one === 2) {
+    field.src = "images/mid.png";
+  }
+  if (one === 3) {
+    field.src = "images/hay.png";
+  }
+  if (one === 2 && time === 0) {
+    one = 3;
+  }
+
+  if (two === 1) {
+    field2.src = "images/field.png";
+  }
+  if (two === 2) {
+    field2.src = "images/mid.png";
+  }
+  if (two === 3) {
+    field2.src = "images/hay.png";
+  }
+  if (two === 2 && time2 === 0) {
+    two = 3;
+  }
+
+  if (three === 1) {
+    field3.src = "images/field.png";
+  }
+  if (three === 2) {
+    field3.src = "images/mid.png";
+  }
+  if (three === 3) {
+    field3.src = "images/hay.png";
+  }
+  if (three === 2 && time3 === 0) {
+    three = 3;
+  }
+
+  if (four === 1) {
+    field4.src = "images/field.png";
+  }
+  if (four === 2) {
+    field4.src = "images/mid.png";
+  }
+  if (four === 3) {
+    field4.src = "images/hay.png";
+  }
+  if (four === 2 && time4 === 0) {
+    four = 3;
+  }
+
+  if (five === 1) {
+    field5.src = "images/field.png";
+  }
+  if (five === 2) {
+    field5.src = "images/mid.png";
+  }
+  if (five === 3) {
+    field5.src = "images/hay.png";
+  }
+  if (five === 2 && time5 === 0) {
+    five = 3;
+  }
+
+  if (six === 1) {
+    field6.src = "images/field.png";
+  }
+  if (six === 2) {
+    field6.src = "images/mid.png";
+  }
+  if (six === 3) {
+    field6.src = "images/hay.png";
+  }
+  if (six === 2 && time6 === 0) {
+    six = 3;
+  }
+
+  requestAnimationFrame(checks, 10);
+}

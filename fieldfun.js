@@ -1,43 +1,69 @@
 
 function fieldcl() {
-  if (one) {
-    one = false;
-    field.src = "images/mid.png";
-    time = 1200;
+  if (one === 1) {
+    one = 2;
+    time = wheattm;
+  }
+
+  if (one === 3) {
+    wheat += 2;
+    one = 1;
   }
 }
 
 function fieldcl2() {
-  if (two) {
-    two = false;
-    field2.src = "images/mid.png";
+  if (two === 1) {
+    two = 2;
+    time2 = wheattm;
+  }
+
+  if (two === 3) {
+    wheat += 2;
+    two = 1;
   }
 }
 
 function fieldcl3() {
-  if (three) {
-    three = false;
-    field3.src = "images/mid.png";
+  if (three === 1) {
+    three = 2;
+    time3 = wheattm;
+  }
+
+  if (three === 3) {
+    wheat += 2;
+    three = 1;
   }
 }
 
 function fieldcl4() {
-  if (four) {
-    four = false;
-    field4.src = "images/mid.png";
+  if (four === 1) {
+    four = 2;
+    time4 = wheattm;
+  }
+  if (four === 3) {
+    wheat += 2;
+    four = 1;
   }
 }
 
 function fieldcl5() {
-  if (five) {
-    five = false;
-    field5.src = "images/mid.png";
+  if (five === 1) {
+    five = 2;
+    time5 = wheattm;
+  }
+  if (five === 3) {
+    wheat += 2;
+    five = 1;
   }
 }
 
 function fieldcl6() {
-  if (six) {
-    six = false;
-    field6.src = "images/mid.png";
+  if (six === 1) {
+    six = 2;
+    time6 = wheattm;
+  }
+  if (six === 3) {
+    wheat += 2;
+    six = 1;
   }
 }
