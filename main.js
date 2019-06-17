@@ -188,7 +188,7 @@ function test() {
     time6 = localStorage.time6ls - finaldif;
   }
   if (localStorage.wheatls) {
-    wheat = localStorage.wheatls;
+    wheat = Number(localStorage.wheatls);
   }
 
 
