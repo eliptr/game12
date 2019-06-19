@@ -47,10 +47,6 @@ var windowWidth = window.innerWidth;
 var windowHeight = window.innerHeight;
 var pixelRatio = window.devicePixelRatio || 1; /// get pixel ratio of device
 
-var og = 100;
-var unlog = "Hello, World!";
-var log = Date();
-
 var d1; //"now"
 var d2 = Date.parse(localStorage.getItem('unlogls'));
 var diff;  // difference in milliseconds
@@ -95,13 +91,21 @@ var minus4 = 1;
 var minus5 = 1;
 var minus6 = 1;
 
-var wheattm = 1200;
+var wheattm = 15;
 var gain = 2;
 
 var wheat = 0;
 var seeds = 6;
 
 var whtord;
+
+var mX1 = 385;
+var mX2 = 385;
+var mX3 = 385;
+var mX4 = 905;
+var mX5 = 905;
+var mX6 = 905;
+
 
 // load images
 field = new Image();
@@ -240,22 +244,22 @@ function draw() {
 
   ctx.font = "100 40px Roboto";
   ctx.fillText(time, 50 , 50);
-  ctx.fillText(seeds, 90 , 50);
-  ctx.fillText(one, 130 , 50);
-  ctx.fillText(two, 180 , 50);
-  ctx.fillText(whtord, 230 , 50);
-  ctx.fillText(time6, 280 , 50);
+  ctx.fillText(time2, 300 , 50);
+  ctx.fillText(time3, 450 , 50);
+  ctx.fillText(time4, 570 , 50);
+  ctx.fillText(time5, 700 , 50);
+  ctx.fillText(time6, 830 , 50);
 
   ctx.font = "100 72px Roboto";
-  ctx.fillText(minutes + ":" + seconds, 385, 1420);
-  ctx.fillText(minutes2 + ":" + seconds2, 385, 1760);
-  ctx.fillText(minutes3 + ":" + seconds3, 385, 2110);
-  ctx.fillText(minutes4 + ":" + seconds4, 905, 1430);
-  ctx.fillText(minutes5 + ":" + seconds5, 905, 1780);
-  ctx.fillText(minutes6 + ":" + seconds6, 905, 2120);
+  ctx.fillText(minutes + ":" + seconds, mX1, 1420);
+  ctx.fillText(minutes2 + ":" + seconds2, mX2, 1760);
+  ctx.fillText(minutes3 + ":" + seconds3, mX3, 2110);
+  ctx.fillText(minutes4 + ":" + seconds4, mX4, 1430);
+  ctx.fillText(minutes5 + ":" + seconds5, mX5, 1780);
+  ctx.fillText(minutes6 + ":" + seconds6, mX6, 2120);
 
   ctx.font = "100 82px Roboto";
-  ctx.fillText(seeds, 805, 990);
+  ctx.fillText(seeds, 825, 990);
   ctx.font = "100 90px Roboto";
   ctx.fillText(wheat, 560, 990);
   ctx.font = "100 72px Roboto";
@@ -288,134 +292,165 @@ setInterval(function () {
     minus = 1;
     time -= minus;
   }
-  if (time < 0) {
-    minus = 0;
-    time = 0;
+  if (time <= 0) {
+    time -= minus;
   }
 
   if (time2 > 0) {
     minus2 = 1;
     time2 -= minus2;
   }
-  if (time2 < 0) {
-    minus2 = 0;
-    time2 = 0;
+  if (time2 <= 0) {
+    time2 -= minus2;
   }
 
   if (time3 > 0) {
     minus3 = 1;
     time3 -= minus3;
   }
-  if (time3 < 0) {
-    minus3 = 0;
-    time3 = 0;
+  if (time3 <= 0) {
+    time3 -= minus3;
   }
 
   if (time4 > 0) {
     minus4 = 1;
     time4 -= minus4;
   }
-  if (time4 < 0) {
-    minus4 = 0;
-    time4 = 0;
+  if (time4 <= 0) {
+    time4 -= minus4;
   }
 
   if (time5 > 0) {
     minus5 = 1;
     time5 -= minus5;
   }
-  if (time5 < 0) {
-    minus5 = 0;
-    time5 = 0;
+  if (time5 <= 0) {
+    time5 -= minus5;
   }
 
   if (time6 > 0) {
     minus6 = 1;
     time6 -= minus6;
   }
-  if (time6 < 0) {
-    minus6 = 0;
-    time6 = 0;
+  if (time6 <= 0) {
+    time6 -= minus6;
   }
 
 }, 1000);
 
 function checks() {
+  //one
   if (one === 1) {
     field.src = "images/field.png";
+    time = 0;
+    minus = 0;
+    mX1 = 3000;
   }
   if (one === 2) {
     field.src = "images/mid.png";
+    minus = 1;
+    mX1 = 385;
   }
   if (one === 3) {
     field.src = "images/hay.png";
+    mX1 = 3000;
   }
-  if (one === 2 && time === 0) {
+  if (one === 2 && time <= 0) {
     one = 3;
   }
-
+//two
   if (two === 1) {
     field2.src = "images/field.png";
+    time2 = 0;
+    minus2 = 0;
+    mX2 = 3000;
   }
   if (two === 2) {
     field2.src = "images/mid.png";
+    minus2 = 1;
+    mX2 = 385;
   }
   if (two === 3) {
     field2.src = "images/hay.png";
+    mX2 = 3000;
   }
-  if (two === 2 && time2 === 0) {
+  if (two === 2 && time2 <= 0) {
     two = 3;
   }
-
+//three
   if (three === 1) {
     field3.src = "images/field.png";
+    time3 = 0;
+    minus3 = 0;
+    mX3 = 3000;
   }
   if (three === 2) {
     field3.src = "images/mid.png";
+    minus3 = 1;
+    mX3 = 385;
   }
   if (three === 3) {
     field3.src = "images/hay.png";
+    mX3 = 3000;
   }
-  if (three === 2 && time3 === 0) {
+  if (three === 2 && time3 <= 0) {
     three = 3;
   }
-
+//four
   if (four === 1) {
     field4.src = "images/field.png";
+    time4 = 0;
+    minus4 = 0;
+    mX4 = 3000;
   }
   if (four === 2) {
     field4.src = "images/mid.png";
+    minus4 = 1;
+    mX4 = 905;
   }
   if (four === 3) {
     field4.src = "images/hay.png";
+    mX4 = 3000;
   }
-  if (four === 2 && time4 === 0) {
+  if (four === 2 && time4 <= 0) {
     four = 3;
   }
-
+//five
   if (five === 1) {
     field5.src = "images/field.png";
+    time5 = 0;
+    minus5 = 0;
+    mX5 = 3000;
   }
   if (five === 2) {
     field5.src = "images/mid.png";
+    minus5 = 1;
+    mX5 = 905;
   }
   if (five === 3) {
     field5.src = "images/hay.png";
+    mX5 = 3000;
   }
-  if (five === 2 && time5 === 0) {
+  if (five === 2 && time5 <= 0) {
     five = 3;
   }
-
+//six
   if (six === 1) {
     field6.src = "images/field.png";
+    time6 = 0;
+    minus6 = 0;
+    mX6 = 3000;
   }
   if (six === 2) {
     field6.src = "images/mid.png";
+    minus6 = 1;
+    mX6 = 905;
   }
   if (six === 3) {
     field6.src = "images/hay.png";
+    mX6 = 3000;
   }
-  if (six === 2 && time6 === 0) {
+  if (six === 2 && time6 <= 0) {
     six = 3;
   }
 

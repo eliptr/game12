@@ -5,8 +5,12 @@ function fieldcl() {
     time = wheattm;
     seeds -= 1;
   }
-
   if (one === 3) {
+    if (time >= -15) {
+      gain = 4;
+    } else if (time < -15) {
+      gain = 2;
+    }
     wheat += gain;
     one = 1;
   }
@@ -20,6 +24,11 @@ function fieldcl2() {
   }
 
   if (two === 3) {
+    if (time2 >= -15) {
+      gain = 4;
+    } else if (time2 < -15) {
+      gain = 2;
+    }
     wheat += gain;
     two = 1;
   }
@@ -33,6 +42,11 @@ function fieldcl3() {
   }
 
   if (three === 3) {
+    if (time3 >= -15) {
+      gain = 4;
+    } else if (time3 < -15) {
+      gain = 2;
+    }
     wheat += gain;
     three = 1;
   }
@@ -45,6 +59,11 @@ function fieldcl4() {
     seeds -= 1;
   }
   if (four === 3) {
+    if (time4 >= -15) {
+      gain = 4;
+    } else if (time4 < -15) {
+      gain = 2;
+    }
     wheat += gain;
     four = 1;
   }
@@ -57,6 +76,11 @@ function fieldcl5() {
     seeds -= 1;
   }
   if (five === 3) {
+    if (time5 >= -15) {
+      gain = 4;
+    } else if (time5 < -15) {
+      gain = 2;
+    }
     wheat += gain;
     five = 1;
   }
@@ -69,6 +93,11 @@ function fieldcl6() {
     seeds -= 1;
   }
   if (six === 3) {
+    if (time6 >= -15) {
+      gain = 4;
+    } else if (time6 < -15) {
+      gain = 2;
+    }
     wheat += gain;
     six = 1;
   }
