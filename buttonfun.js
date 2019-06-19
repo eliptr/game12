@@ -111,5 +111,6 @@ function ordercl() {
   if (wheat >= whtord) {
     wheat -= whtord;
     whtord = Math.floor((Math.random() * 30) + 1);
+    localStorage.whtordls = whtord;
   }
 }

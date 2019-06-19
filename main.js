@@ -97,6 +97,7 @@ var gain = 2;
 
 var wheat = 0;
 var seeds = 6;
+var coins = 0;
 
 var whtord;
 
@@ -125,7 +126,7 @@ field3.src = "images/field.png";
 field4.src = "images/field.png";
 field5.src = "images/field.png";
 field6.src = "images/field.png";
-info.src = "images/info.png";
+info.src = "images/info2.png";
 oven.src = "images/oven.png";
 orders.src = "images/orders.png";
 
@@ -260,7 +261,8 @@ function draw() {
   ctx.fillText(minutes6 + ":" + seconds6, mX6, 2120);
 
   ctx.font = "100 82px Roboto";
-  ctx.fillText(seeds, 825, 990);
+  ctx.fillText(seeds, 805, 990);
+  ctx.fillText(coins, 110.3, 1016);
   ctx.font = "100 90px Roboto";
   ctx.fillText(wheat, 560, 990);
   ctx.font = "100 72px Roboto";
@@ -458,6 +460,27 @@ function checks() {
   if (seeds < 0) {
     seeds = 0;
   }
+
+  // local storages
+  localStorage.unlogls = new Date();
+  localStorage.onels = one;
+  localStorage.twols = two;
+  localStorage.threels = three;
+  localStorage.fourls = four;
+  localStorage.fivels = five;
+  localStorage.sixls = six;
+
+  localStorage.timels = time;
+  localStorage.time2ls = time2;
+  localStorage.time3ls = time3;
+  localStorage.time4ls = time4;
+  localStorage.time5ls = time5;
+  localStorage.time6ls = time6;
+
+  localStorage.wheatls = wheat;
+  localStorage.seedsls = seeds;
+
+  localStorage.whtordls = whtord;
 
   requestAnimationFrame(checks, 10);
 }
