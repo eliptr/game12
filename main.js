@@ -34,6 +34,8 @@ function onPause() {
   localStorage.seedsls = seeds;
 
   localStorage.whtordls = whtord;
+  localStorage.cordls = cord;
+  localStorage.coinsls = coins;
 }
 
 function onResume() {
@@ -91,15 +93,16 @@ var minus4 = 1;
 var minus5 = 1;
 var minus6 = 1;
 
-var wheattm = 1200;
-var space = -1500;
+var wheattm = 1;
+var space = -15;
 var gain = 2;
 
 var wheat = 0;
-var seeds = 6;
+var seeds = 10;
 var coins = 0;
 
-var whtord;
+var cord;
+var whtord = 1;
 
 var mX1 = 385;
 var mX2 = 385;
@@ -209,7 +212,13 @@ function test() {
   if (localStorage.whtordls) {
     whtord = localStorage.whtordls;
   } else {
-    whtord = Math.floor((Math.random() * 30) + 1);
+    whtord = 1;
+  }
+  if (localStorage.cordls) {
+    cord = Number(localStorage.cordls);
+  }
+  if (localStorage.coinsls) {
+    coins = Number(localStorage.coinsls);
   }
 
 
@@ -262,11 +271,12 @@ function draw() {
 
   ctx.font = "100 82px Roboto";
   ctx.fillText(seeds, 805, 990);
-  ctx.fillText(coins, 110.3, 1016);
+  ctx.fillText(coins, 110.3, 995);
   ctx.font = "100 90px Roboto";
   ctx.fillText(wheat, 560, 990);
   ctx.font = "100 72px Roboto";
   ctx.fillText(whtord, 200, 245);
+  ctx.fillText(cord, 197.8, 69.1);
 
   //requestAnimationFrame
   requestAnimationFrame(draw, 10);
@@ -481,6 +491,8 @@ function checks() {
   localStorage.seedsls = seeds;
 
   localStorage.whtordls = whtord;
+  localStorage.cordls = cord;
+  localStorage.coinsls = coins;
 
   requestAnimationFrame(checks, 10);
 }

@@ -104,13 +104,19 @@ function fieldcl6() {
 }
 
 function buycl() {
-  seeds += 1;
+  if (coins > 5) {
+    seeds += 1;
+    coins -= 5;
+  }
 }
 
 function ordercl() {
   if (wheat >= whtord) {
+    coins += cord;
     wheat -= whtord;
     whtord = Math.floor((Math.random() * 30) + 1);
     localStorage.whtordls = whtord;
+    cord = whtord + Math.floor((Math.random() * 9) + 1);
+    localStorage.cordls = cord;
   }
 }
