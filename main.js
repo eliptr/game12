@@ -93,15 +93,15 @@ var minus4 = 1;
 var minus5 = 1;
 var minus6 = 1;
 
-var wheattm = 1200;
-var space = -1500;
+var wheattm = 1;
+var space = -15;
 var gain = 2;
 
 var wheat = 0;
 var seeds = 10;
 var coins = 0;
 
-var cord;
+var cord = 20;
 var whtord = 1;
 
 var mX1 = 385;
