@@ -104,7 +104,7 @@ function fieldcl6() {
 }
 
 function buycl() {
-  if (coins > 5) {
+  if (coins >= 5) {
     seeds += 1;
     coins -= 5;
   }
@@ -118,5 +118,13 @@ function ordercl() {
     localStorage.whtordls = whtord;
     cord = whtord + Math.floor((Math.random() * 9) + 1);
     localStorage.cordls = cord;
+  }
+}
+
+function levelcl() {
+  if (coins >= lvlcn) {
+    level += 1;
+    coins -= lvlcn;
+    lvlcn += 40;
   }
 }

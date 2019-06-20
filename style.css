@@ -133,3 +133,17 @@ body {
   margin: 0px;
   background-color: rgba(255, 0, 0, 0);
 }
+
+.level {
+  position: fixed;
+  width: 22px;
+  height: 17px;
+  top: 383px;
+  left: 256px;
+/*  outline: none;
+  box-shadow: none; */
+  border: 0px;
+  padding: 0px;
+  margin: 0px;
+  background-color: rgba(255, 0, 0, 0);
+}
