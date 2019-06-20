@@ -276,7 +276,7 @@ function draw() {
   ctx.fillText(wheat, 560, 990);
   ctx.font = "100 72px Roboto";
   ctx.fillText(whtord, 200, 245);
-  ctx.fillText(cord, 197.8, 69.1);
+  ctx.fillText(cord, 200, 140);
 
   //requestAnimationFrame
   requestAnimationFrame(draw, 10);
